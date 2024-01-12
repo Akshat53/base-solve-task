@@ -1,6 +1,7 @@
 .header {
   display: flex;
 }
+
 .header p {
   font-size: 2rem;
   font-weight: 600;
@@ -16,9 +17,11 @@ table {
   border-collapse: collapse;
   margin-bottom: 1em;
 }
+
 .trow {
   border-bottom: 1px solid #c3c1c1;
 }
+
 tr th {
   text-transform: uppercase;
   font-weight: 400;
@@ -30,13 +33,16 @@ td {
   border: 1px solid #ddd;
   text-align: left;
 }
+
 tr td {
   font-weight: 500;
 }
+
 .addButton {
   display: flex;
   justify-content: flex-end;
 }
+
 .addButton button {
   background: transparent;
   height: 40px;
@@ -57,19 +63,19 @@ tr td {
   font-family: Poppins;
   font-weight: 800;
 }
+
 .form-select {
   border-radius: 100px !important;
   padding: 5px 20px !important;
-}
-
-.form-select {
   margin-top: 30px;
 }
+
 .modalButton {
   display: flex;
   justify-content: center;
   padding: 30px;
 }
+
 .modalButton button {
   padding: 10px;
   border-radius: 20px;
@@ -79,9 +85,11 @@ tr td {
   border: 1px solid white;
   width: 50%;
 }
+
 .nav-link {
   color: black !important;
 }
+
 .editBtn {
   background: transparent;
   border: none;
@@ -89,7 +97,14 @@ tr td {
   color: black;
 }
 
-@media (max-width: 600px) {
+@media only screen and (max-width: 1200px) {
+  th,
+  td {
+    padding: 0.5em;
+  }
+}
+
+@media only screen and (max-width: 768px) {
   th,
   td {
     display: block;
@@ -98,15 +113,13 @@ tr td {
   }
 
   td {
-    text-align: right;
+    text-align: left;
     border-bottom: 1px solid #ddd;
   }
 
   td::before {
     content: attr(data-label);
     font-weight: bold;
-    display: inline-block;
-    width: 50%;
-    box-sizing: border-box;
+    display: block;
   }
 }
