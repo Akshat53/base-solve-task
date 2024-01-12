@@ -53,7 +53,7 @@ const reducer = (state = initialState, action) => {
     case actions.SELECT_LOCATION:
       return {
         ...state,
-        selectedLocations: [...state.selectedLocations, ...state.locationList.filter(i => i.value == action.payload)]
+        selectedLocations: [...state.selectedLocations, ...state.locationList.filter(i => i.value === action.payload)]
       };
     case actions.UPDATE_LOCATION:
       return {
