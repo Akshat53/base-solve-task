@@ -1,0 +1,115 @@
+.header {
+  display: flex;
+}
+.header p {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 80px 0px;
+}
+
+.responsive-table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1em;
+}
+.trow {
+  border-bottom: 1px solid #c3c1c1;
+}
+tr th{
+  text-transform: uppercase;
+  font-weight: 400;
+
+}
+
+th,
+td {
+  padding: 1em;
+  border: 1px solid #ddd;
+  text-align: left;
+ 
+ 
+}
+tr td{
+  font-weight: 500;
+}
+.addButton {
+  display: flex;
+  justify-content: flex-end;
+}
+.addButton button {
+  background: transparent;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid #c3c1c1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 35px;
+  padding: 20px 20px;
+}
+
+.modal-title {
+  width: 100%;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: 800;
+}
+.form-select {
+  border-radius: 100px !important;
+  padding: 5px 20px !important;
+}
+
+.form-select {
+  margin-top: 30px;
+}
+.modalButton {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+.modalButton button {
+  padding: 10px;
+  border-radius: 20px;
+  background-color: black;
+  color: white;
+  font-size: 15px;
+  border: 1px solid white;
+  width: 50%;
+}
+.nav-link {
+  color: black !important;
+}
+.editBtn{
+  background: transparent;
+  border: none;
+  font-weight: 600;
+  color: black;
+}
+
+@media (max-width: 600px) {
+  th,
+  td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  td {
+    text-align: right;
+    border-bottom: 1px solid #ddd;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: inline-block;
+    width: 50%;
+    box-sizing: border-box;
+  }
+}
