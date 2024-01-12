@@ -19,10 +19,9 @@ table {
 .trow {
   border-bottom: 1px solid #c3c1c1;
 }
-tr th{
+tr th {
   text-transform: uppercase;
   font-weight: 400;
-
 }
 
 th,
@@ -30,10 +29,8 @@ td {
   padding: 1em;
   border: 1px solid #ddd;
   text-align: left;
- 
- 
 }
-tr td{
+tr td {
   font-weight: 500;
 }
 .addButton {
@@ -85,7 +82,7 @@ tr td{
 .nav-link {
   color: black !important;
 }
-.editBtn{
+.editBtn {
   background: transparent;
   border: none;
   font-weight: 600;

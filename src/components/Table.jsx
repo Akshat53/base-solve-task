@@ -1,5 +1,5 @@
-import React from 'react';
-import './styles.css';
+import React from "react";
+import "./styles.css";
 
 const ResponsiveTable = ({ headers, data }) => {
   return (
@@ -14,7 +14,7 @@ const ResponsiveTable = ({ headers, data }) => {
         </thead>
         <tbody>
           {data.map((row, index) => (
-            <tr key={index} className="trow" > 
+            <tr key={index} className="trow">
               {headers.map((header, index) => (
                 <td key={index} data-label={header.label}>
                   {row[header.value]}

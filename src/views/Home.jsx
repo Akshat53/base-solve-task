@@ -8,31 +8,36 @@ import Form from "../components/Form";
 import { connect } from "react-redux";
 import { tableHeaders } from "../utils/constants";
 import { updateLocationAction } from "../store/locationActions";
-import "../components/styles.css"
+import "../components/styles.css";
 
 const Home = (props) => {
   const { locationStore, locationActions } = props;
-  const { selectedLocations, } = locationStore;
+  const { selectedLocations } = locationStore;
   const [openModal, setOpenModal] = useState(false);
   const [newValue, setNewValue] = useState("Location");
   const [selectedLocationsData, setSelectedLocationData] = useState([]);
 
   useEffect(() => {
-    setSelectedLocationData(selectedLocations.length ? selectedLocations.map(item => {
-      return {
-        ...item,
-        action: (
-          <Button
-            className="editBtn"
-            label={'Edit'}
-            onClick={() => {
-              handleModal(true);
-              locationActions.updateLocation(item)
-            }} />
-        )
-      }
-    }) : []);
-  }, [selectedLocations])
+    setSelectedLocationData(
+      selectedLocations.length
+        ? selectedLocations.map((item) => {
+            return {
+              ...item,
+              action: (
+                <Button
+                  className="editBtn"
+                  label={"Edit"}
+                  onClick={() => {
+                    handleModal(true);
+                    locationActions.updateLocation(item);
+                  }}
+                />
+              ),
+            };
+          })
+        : []
+    );
+  }, [selectedLocations]);
 
   const tabList = [
     {
@@ -41,10 +46,10 @@ const Home = (props) => {
       eventKey: "Location",
       content: (
         <>
-         <div className={"addButton"}>
+          <div className={"addButton"}>
             <Button label={"+"} onClick={() => handleModal(true)} />
           </div>
-         
+
           <Table headers={tableHeaders} data={selectedLocationsData} />
         </>
       ),
@@ -55,7 +60,7 @@ const Home = (props) => {
       eventKey: "Companies",
       content: (
         <>
-           <div className={"addButton"}>
+          <div className={"addButton"}>
             <Button label={"+"} onClick={() => handleModal(true)} />
           </div>
           <Table headers={tableHeaders} data={selectedLocationsData} />
@@ -68,7 +73,7 @@ const Home = (props) => {
       eventKey: "Stats",
       content: (
         <>
-            <div className={"addButton"}>
+          <div className={"addButton"}>
             <Button label={"+"} onClick={() => handleModal(true)} />
           </div>
           <Table headers={tableHeaders} data={selectedLocationsData} />
@@ -94,12 +99,10 @@ const Home = (props) => {
         header={"Add New Location"}
         handleClose={() => {
           handleModal(false);
-          locationActions.updateLocation(null)
+          locationActions.updateLocation(null);
         }}
       >
-        <Form
-          handleModal={handleModal}
-        />
+        <Form handleModal={handleModal} />
       </Modal>
     </div>
   );

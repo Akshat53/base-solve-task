@@ -12,7 +12,11 @@ const Select = (props) => {
     >
       <option>{placeholder}</option>
       {options.map((option, i) => {
-        return <option value={option.value} key={i}>{option.label}</option>;
+        return (
+          <option value={option.value} key={i}>
+            {option.label}
+          </option>
+        );
       })}
     </Form.Select>
   );
